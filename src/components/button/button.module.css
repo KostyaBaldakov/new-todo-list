@@ -1,0 +1,13 @@
+.button {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    width: 100%;
+    margin-right: 10px;
+}

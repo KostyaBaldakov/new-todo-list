@@ -1,0 +1,26 @@
+.controlPanel {
+  display: flex;
+  height: 25px;
+  border-bottom: 2px solid #444;
+  padding: 10px;
+}
+
+.search {
+}
+
+.sortingBtn {
+    width: 25px;
+    height: 25px;
+    display: block;
+    margin: 0 10px;
+
+}
+
+.addButton {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

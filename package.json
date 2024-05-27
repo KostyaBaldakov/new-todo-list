@@ -1,5 +1,5 @@
 {
-  "name": "todo-list",
+  "name": "new-todo-list",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "server": "json-server -w db.json --port 3001",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
