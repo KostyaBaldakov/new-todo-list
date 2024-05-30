@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./control-panel.module.css";
 
-export const ControlPanel = () => {
+export const ControlPanel = ({ onTodoAdd }) => {
   const [searchPhrase, SetSearchPhrase] = useState("");
   const [isSortingEnable, setIsSortingEnable] = useState(false);
 
@@ -12,8 +12,6 @@ export const ControlPanel = () => {
   const onSortingChange = ({ target }) => {
     setIsSortingEnable(target.checked);
   };
-
-  const onTodoAdd = () => {};
 
   return (
     <div className={styles.controlPanel}>

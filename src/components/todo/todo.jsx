@@ -7,6 +7,7 @@ export const Todo = ({
   isEditing,
   onEdit,
   onTitleChange,
+  onCompletedChange,
   onSave,
   onRemove,
 }) => {
@@ -16,7 +17,7 @@ export const Todo = ({
         className={styles.checkbox}
         type="checkbox"
         checked={completed}
-        readOnly
+        onChange={({ target }) => onCompletedChange(target.checked)}
       />
 
       <div className={styles.title}>
