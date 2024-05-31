@@ -12,6 +12,8 @@ import { NEW_TODO_ID } from "./constants";
 
 export const App = () => {
   const [todos, setTodos] = useState([]);
+  const [searchPhrase, setSearchPhrase] = useState("");
+  const [isAlphabetSorting, setIsAlphabetSorting] = useState(false);
 
   const onTodoAdd = () => {
     setTodos(addTodoInTodos(todos));
@@ -21,7 +23,7 @@ export const App = () => {
     const { title, completed } = findTodo(todos, todoId) || {};
 
     if (todoId === NEW_TODO_ID) {
-      createTodo({ title, completed }).then(({ todo }) => {
+      createTodo({ title, completed }).then((todo) => {
         let updateTodos = setTodoInTodos(todos, {
           id: NEW_TODO_ID,
           isEditing: false,
@@ -58,14 +60,20 @@ export const App = () => {
   };
 
   useEffect(() => {
-    readTodos().then((loadedTodos) => setTodos(loadedTodos.reverse()));
-  }, []);
+    readTodos(searchPhrase, isAlphabetSorting).then((loadedTodos) =>
+      setTodos(loadedTodos.reverse())
+    );
+  }, [searchPhrase, isAlphabetSorting]);
 
   return (
     <div className="todoapp">
       <div className="main">
         <h1>Todo app</h1>
-        <ControlPanel onTodoAdd={onTodoAdd} />
+        <ControlPanel
+          onTodoAdd={onTodoAdd}
+          onSearch={setSearchPhrase}
+          onSorting={setIsAlphabetSorting}
+        />
         <div>
           {todos.map(({ id, title, completed, isEditing = false }) => (
             <Todo

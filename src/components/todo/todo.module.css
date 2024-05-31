@@ -2,7 +2,15 @@
   display: flex;
   padding: 10px;
   border-bottom: 1px solid #bbb;
+  align-items: center;
 }
+
+
+.groupBtn {
+  margin-left: auto;
+}
+
+
 
 .checkbox {
   width: 20px;

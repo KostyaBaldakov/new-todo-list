@@ -10,7 +10,7 @@ export const Todo = ({
   onCompletedChange,
   onSave,
   onRemove,
-}) => {
+  }) => {
   return (
     <div className={styles.todo}>
       <input
@@ -35,7 +35,7 @@ export const Todo = ({
         )}
       </div>
 
-      <div>
+      <div className={styles.groupBtn}>
         {isEditing ? (
           <Button onClick={onSave}>✎</Button>
         ) : (

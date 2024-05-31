@@ -1,23 +1,13 @@
 {
   "todos": [
     {
-      "id": 2,
-      "title": "Aasdasdasasd",
-      "completed": false
-    },
-    {
-      "id": 4,
-      "title": "asddddddddd",
-      "completed": false
-    },
-    {
       "id": 5,
       "title": "et porro tempora",
       "completed": false
     },
     {
       "title": "httpMethod",
-      "completed": true,
+      "completed": false,
       "id": 6
     },
     {
@@ -31,14 +21,9 @@
       "id": 8
     },
     {
-      "title": "asdasdas",
-      "completed": false,
+      "title": "nePavelDurov",
+      "completed": true,
       "id": 9
-    },
-    {
-      "title": "asd",
-      "completed": false,
-      "id": 10
     }
   ]
 }
