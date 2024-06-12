@@ -1,0 +1,29 @@
+.todo {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #bbb;
+    align-items: center;
+  }
+  
+  .todo:last-child {
+    border: none;
+  }
+  
+  .groupBtn {
+    margin-left: auto;
+  }
+  
+  .title {
+    width: 100%;
+    margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .checkbox {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px 0 0;
+  }
+  

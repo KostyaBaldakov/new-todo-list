@@ -3,6 +3,8 @@
   height: 25px;
   border-bottom: 2px solid #444;
   padding: 10px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .addButton {
