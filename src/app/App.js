@@ -1,19 +1,22 @@
 import { useState, useEffect } from "react";
-import { ControlPanel, Todo } from "./components";
-import { createTodo, readTodos, updateTodo, deleteTodo } from "./api";
+import { ControlPanel, Todo } from "../components";
+import { createTodo, readTodos, updateTodo, deleteTodo } from "../api";
 import {
   addTodoInTodos,
   findTodo,
   setTodoInTodos,
   removeTodoInTodos,
-} from "./utils";
+} from "../utils";
+import { NEW_TODO_ID } from "../constants";
+import { useStateManager } from "../state-manager";
 import styles from "./App.module.css";
-import { NEW_TODO_ID } from "./constants";
 
 export const App = () => {
-  const [todos, setTodos] = useState([]);
-  const [searchPhrase, setSearchPhrase] = useState("");
-  const [isAlphabetSorting, setIsAlphabetSorting] = useState(false);
+  const { state, setState } = useStateManager();
+  const {
+    todos,
+    options: { searchPhrase, isAlphabetSorting },
+  } = state;
 
   const onTodoAdd = () => {
     setTodos(addTodoInTodos(todos));
@@ -61,7 +64,7 @@ export const App = () => {
 
   useEffect(() => {
     readTodos(searchPhrase, isAlphabetSorting).then((loadedTodos) =>
-      setTodos(loadedTodos.reverse())
+      setState({ ...state, todos: loadedTodos })
     );
   }, [searchPhrase, isAlphabetSorting]);
 

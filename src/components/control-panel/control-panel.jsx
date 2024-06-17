@@ -3,6 +3,10 @@ import { Search, Sorting } from "./components";
 import styles from "./control-panel.module.css";
 
 export const ControlPanel = ({ onTodoAdd, onSearch, onSorting }) => {
+  const onTodoAdd = () => {
+    setTodos(addTodoInTodos(todos));
+  };
+
   return (
     <div className={styles.controlPanel}>
       <Search onSearch={onSearch} />
