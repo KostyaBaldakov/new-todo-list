@@ -19,7 +19,7 @@ const getUpdatedState = (state, newStateData) =>
 
 const updateStateArray = (state, newStateData) =>
   newStateData.reduce((updatedState, { id, ...newItemData }) => {
-    const foundItem = state.find(({ id, itemId }) => itemId === id);
+    const foundItem = state.find(({ id: itemId }) => itemId === id);
 
     if (!foundItem) {
       return [{ id, ...newItemData }, ...updatedState];
@@ -38,7 +38,7 @@ const updateStateObject = (state, newStateData) =>
   Object.entries(newStateData).reduce(
     (updatedState, [key, value]) => ({
       ...updatedState,
-      [key]:
+      [key]: 
         typeof value === "object" && value !== null
           ? getUpdatedState(updatedState[key], value)
           : value,
