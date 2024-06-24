@@ -1,10 +1,10 @@
 import { Button } from "../button/button";
 import { Search, Sorting } from "./components";
 import { useStateManager } from "../../state-manager";
-import styles from "./control-panel.module.css";
 import { NEW_TODO_ID } from "../../constants";
+import styles from "./control-panel.module.css";
 
-export const ControlPanel = ({ onTodoAdd, onSearch, onSorting }) => {
+export const ControlPanel = () => {
   const { updateState } = useStateManager();
 
   const onTodoAdd = () => {
@@ -25,9 +25,9 @@ export const ControlPanel = ({ onTodoAdd, onSearch, onSorting }) => {
 
   return (
     <div className={styles.controlPanel}>
-      <Search onSearch={onSearch} />
-      <Sorting onSorting={onSorting} />
-      <Button onClick={onTodoAdd}>✚</Button>
+      <Search/>
+      <Sorting/>
+      <Button>✚</Button>
     </div>
   );
 };
