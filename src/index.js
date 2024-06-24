@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { App, initialState } from './app/App';
+import { App, initialState } from './app';
 import { StateManager } from './state-manager';
 import './index.css';
 

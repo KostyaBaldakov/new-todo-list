@@ -20,7 +20,7 @@ export const Search = () => {
     });
   };
 
-  const debouncedRunSearch = useRef(debounce(onSearch, 1500)).current;
+  const debouncedRunSearch = useRef(debounce(runSearch, 1500)).current;
 
   const onChange = ({ target }) => {
     updateState({ options: { searchInput: target.value } });
