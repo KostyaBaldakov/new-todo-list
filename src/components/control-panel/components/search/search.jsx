@@ -14,6 +14,7 @@ export const Search = () => {
   const runSearch = (phrase, sorting) => {
     updateState({
       options: {
+        searchInput: phrase,
         searchPhrase: phrase,
         isAlphabetSorting: sorting,
       },

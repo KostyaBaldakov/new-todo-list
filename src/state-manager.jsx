@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useContext } from "react";
-import { Children } from "react";
 import { createContext } from "react";
 
 const StateManagerContext = createContext({
@@ -19,14 +18,14 @@ const getUpdatedState = (state, newStateData) =>
 
 const updateStateArray = (state, newStateData) =>
   newStateData.reduce((updatedState, { id, ...newItemData }) => {
+    if (checkEmptyObject(newItemData)) {
+      return updatedState.filter(({ id: idToCheck }) => idToCheck !== id);
+    }
+
     const foundItem = state.find(({ id: itemId }) => itemId === id);
 
     if (!foundItem) {
       return [{ id, ...newItemData }, ...updatedState];
-    }
-
-    if (checkEmptyObject(newItemData)) {
-      return updatedState.filter(({ id: idToCheck }) => idToCheck !== id);
     }
 
     return updatedState.map((item) =>
@@ -38,7 +37,7 @@ const updateStateObject = (state, newStateData) =>
   Object.entries(newStateData).reduce(
     (updatedState, [key, value]) => ({
       ...updatedState,
-      [key]: 
+      [key]:
         typeof value === "object" && value !== null
           ? getUpdatedState(updatedState[key], value)
           : value,

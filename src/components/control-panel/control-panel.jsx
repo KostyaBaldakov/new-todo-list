@@ -27,7 +27,7 @@ export const ControlPanel = () => {
     <div className={styles.controlPanel}>
       <Search/>
       <Sorting/>
-      <Button>✚</Button>
+      <Button onClick={onTodoAdd}>✚</Button>
     </div>
   );
 };

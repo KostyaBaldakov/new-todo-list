@@ -12,9 +12,16 @@ export const App = () => {
   } = state;
 
   useEffect(() => {
-    readTodos(searchPhrase, isAlphabetSorting).then((loadedTodos) =>
-      setState({ ...state, todos: loadedTodos })
-    );
+    readTodos(searchPhrase, isAlphabetSorting).then((loadedTodos) => {
+      setState({
+        ...state,
+        todos: loadedTodos,
+        options: {
+          ...state.options,
+          isLoading: false,
+        },
+      });
+    });
   }, [searchPhrase, isAlphabetSorting]);
 
   return (

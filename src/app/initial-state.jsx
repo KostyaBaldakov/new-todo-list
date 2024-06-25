@@ -8,5 +8,6 @@ export const initialState = {
     searcInput: "",
     searchPhrase: "",
     isAlphabetSorting: false,
+    isLoading: true,
   },
 };
